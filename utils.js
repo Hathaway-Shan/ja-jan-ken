@@ -11,12 +11,12 @@ export function score(playerChoice, computerChoice) {
     } else if (playerChoice === 'paper' && computerChoice === 'rock') {
         return 1;
     } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        return 0;
+        return -1;
     } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-        return 0;
+        return -1;
     } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-        return 0;
+        return -1;
     } else {
-        return 2;
+        return 0;
     } 
 }
