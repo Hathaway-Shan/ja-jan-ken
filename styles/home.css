@@ -1,1 +1,23 @@
 /* add css for index.html */
+#throw-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.throw {
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: transparent;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
