@@ -85,4 +85,4 @@ Code that should run when the page loads (other than event subscriptions which h
 
 - App and game logic functions that are pure and can be unit tested (TDD)
 - Render functions (return dynamic Html based on input parameters)
-![Test Image 1](Rock-Paper-Scissors.jpg)
+![Test Image 1](./assets/Rock-Paper-Scissors.jpg)
