@@ -17,6 +17,6 @@ export function score(playerChoice, computerChoice) {
     } else if (playerChoice === 'rock' && computerChoice === 'paper') {
         return 0;
     } else {
-        return 0;
+        return 2;
     } 
 }
