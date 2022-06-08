@@ -45,6 +45,14 @@ function playerSelect() {
 }
     // component
     // define and grab DOM elements
+const rockImage = document.getElementById('rock');
+const paperImage = document.getElementById('paper');
+const scissorsImage = document.getElementById('scissors');
+
+function imageSwapper() {
+    if (computerChoice === 'rock', 'paper', 'scissors')
+}
+
     // buttons
 const rockButton = document.getElementById('rock-button');
 const paperButton = document.getElementById('paper-button');
