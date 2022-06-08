@@ -6,17 +6,18 @@ let total = 0;
 let wins = 0;
 let losses = 0;
 let draws = 0;
+let rock = 0;
+let paper = 0;
+let scissors = 0;
 let timeout = 0;
 
 // game logic
 let computerChoice = '';
 let playerChoice = '';
-let choice = '';
 
 function jaJanKen() {
 
     computerChoice = getRandomItem(throws);
-    choice = true;
     const result = score(playerChoice, computerChoice);
 
     if (result === 1) {
@@ -27,11 +28,21 @@ function jaJanKen() {
         draws++;
     }
     total++;
-    console.log(wins, losses, draws);
-    displayResults();
     
+    displayResults();
+    playerSelect();
 }
 
+function playerSelect() {
+
+    if (playerChoice === 'rock') {
+        rock++;
+    } else if (playerChoice === 'paper') {
+        paper++;
+    } else if (playerChoice === 'scissors') {
+        scissors++;
+    }
+}
     // component
     // define and grab DOM elements
     // buttons
@@ -61,13 +72,18 @@ const lossesDisplay = document.getElementById('losses-display');
 const drawDisplay = document.getElementById('draws-display');
 const totalDisplay = document.getElementById('total-display');
     // throw tracker
-
+const rockDisplay = document.getElementById('rock-display');
+const paperDisplay = document.getElementById('paper-display');
+const scissorsDisplay = document.getElementById('scissors-display');
         // scoreboard
 function displayResults() {
     winsDisplay.textContent = wins;
     lossesDisplay.textContent = losses;
     drawDisplay.textContent = draws;
     totalDisplay.textContent = total;
+    scissorsDisplay.textContent = scissors;
+    rockDisplay.textContent = rock;
+    paperDisplay.textContent = paper;
 }
 
     // optional: subscribe to events
