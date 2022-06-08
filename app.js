@@ -9,7 +9,7 @@ let draws = 0;
 let rock = 0;
 let paper = 0;
 let scissors = 0;
-let timeout = 0;
+let mode = 'playing';
 
 // game logic
 let computerChoice = '';
@@ -19,7 +19,7 @@ function jaJanKen() {
 
     computerChoice = getRandomItem(throws);
     const result = score(playerChoice, computerChoice);
-
+    mode = 'not-playing';
     if (result === 1) {
         wins++;
     } else if (result === -1) {
@@ -31,6 +31,14 @@ function jaJanKen() {
     
     displayResults();
     playerSelect();
+    modeToggle();
+    setTimeout(() => {
+        mode = 'playing';
+        modeToggle();
+    },
+    3000);
+    
+    
 }
 
 function playerSelect() {
@@ -45,13 +53,8 @@ function playerSelect() {
 }
     // component
     // define and grab DOM elements
-const rockImage = document.getElementById('rock');
-const paperImage = document.getElementById('paper');
-const scissorsImage = document.getElementById('scissors');
 
-function imageSwapper() {
-    if (computerChoice === 'rock', 'paper', 'scissors')
-}
+
 
     // buttons
 const rockButton = document.getElementById('rock-button');
@@ -92,6 +95,15 @@ function displayResults() {
     scissorsDisplay.textContent = scissors;
     rockDisplay.textContent = rock;
     paperDisplay.textContent = paper;
+}
+const outcomeImages = document.getElementById('outcome-images')
+
+// mode switcher between a playing and non playing state
+function modeToggle() {
+    if (mode === 'playing') {
+        outcomeImages.classList.remove('hidden');
+    } else {outcomeImages.classList.add('hidden');
+    }
 }
 
     // optional: subscribe to events
