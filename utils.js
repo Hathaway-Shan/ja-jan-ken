@@ -20,3 +20,4 @@ export function score(playerChoice, computerChoice) {
         return 0;
     } 
 }
+

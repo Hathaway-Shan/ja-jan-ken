@@ -30,8 +30,8 @@ function jaJanKen() {
     }
     total++;
     
-    displayResults();
     playerSelect();
+    displayResults();
     modeToggle();
     setTimeout(() => {
         mode = 'playing';
