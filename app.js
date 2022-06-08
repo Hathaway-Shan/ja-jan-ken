@@ -28,10 +28,13 @@ function jaJanKen() {
     }
     total++;
     console.log(wins, losses, draws);
+    displayResults();
+    
 }
 
     // component
     // define and grab DOM elements
+    // buttons
 const rockButton = document.getElementById('rock-button');
 const paperButton = document.getElementById('paper-button');
 const scissorsButton = document.getElementById('scissors-button');
@@ -53,17 +56,20 @@ rockButton.addEventListener('click', () => {
 
 
     // display functions
-function displayFunction() {
-    if (choice === 'rock') {
-        rockButton.classList.add('choice');
-    }
-    if (choice === 'scissors') {
-        scissorsButton.classList.add('choice');
-    }
-    if (choice === 'paper') {
-        paperButton.classList.add('choice');
-    }
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const drawDisplay = document.getElementById('draws-display');
+const totalDisplay = document.getElementById('total-display');
+    // throw tracker
+
+        // scoreboard
+function displayResults() {
+    winsDisplay.textContent = wins;
+    lossesDisplay.textContent = losses;
+    drawDisplay.textContent = draws;
+    totalDisplay.textContent = total;
 }
+
     // optional: subscribe to events
         // event handlers - what needs to happen?
 
