@@ -1,7 +1,7 @@
 // import needed modules
 import { getRandomItem, score } from './utils.js';
 // state
-const throws = ['rock', 'paper', 'scissors']
+const throws = ['rock', 'paper', 'scissors'];
 let total = 0;
 let wins = 0;
 let losses = 0;
@@ -10,6 +10,7 @@ let rock = 0;
 let paper = 0;
 let scissors = 0;
 let mode = 'playing';
+let result = 0;
 
 // game logic
 let computerChoice = '';
@@ -18,7 +19,7 @@ let playerChoice = '';
 function jaJanKen() {
 
     computerChoice = getRandomItem(throws);
-    const result = score(playerChoice, computerChoice);
+    result = score(playerChoice, computerChoice);
     mode = 'not-playing';
     if (result === 1) {
         wins++;
@@ -94,34 +95,63 @@ function displayResults() {
     rockDisplay.textContent = rock;
     paperDisplay.textContent = paper;
 }
-const outcomeImages = document.getElementById('outcome-images')
+const outcomeImages = document.getElementById('outcome-images');
+const throwContainer = document.getElementById('throw-options');
+const outcomeDisplay = document.getElementById('draw');
+const resultDisplay = document.getElementById('result-display');
 
 // mode switcher between a playing and non playing state
-const rockImage = "https://tinyurl.com/3hvhaa45"
-const paperImage = "https://tinyurl.com/ms4zp7xf"
-const scissorsImage = "https://tinyurl.com/d2vu65rr"
+const rockImage = 'https://tinyurl.com/3hvhaa45';
+const paperImage = 'https://tinyurl.com/ms4zp7xf';
+const scissorsImage = 'https://tinyurl.com/d2vu65rr';
+const winImage = 'https://lh3.googleusercontent.com/EuHXzjCSUANikbH2daTo1_Vnmld9TOLOVj78WwX46Yx3lFPMZEScvtsXDN4FwN8ncZCAJt1nejfEM2MONjYLcbC7QKozvhx5X7kL0KALmKQkrYdUHGS-k2YmqWas_ij2Dc1WTHGBPQ=w437-h315-p-k';
+const loseImage = 'https://lh3.googleusercontent.com/75Bf0Xhuclts7oEKQmaq-WSaCwppJ6eAtE4rbrjrNNKhhSzZ8GgoFbE25hLt3ZFCJdtoPSro7qXDizzQujU1qcB-NOIg5Jtg3Nj4zP-m4GWmRyPWMjhrBTRT9d2G-7sMo8cEFMjsJw=w437-h315-p-k';
+const drawImage = 'https://lh3.googleusercontent.com/UO_WVPgLYnKbZOo4DJ5y5VPP2DRzNRmsQ-W-px67G7mYCLOMkj6vXQRL97QGHeGNeGk5ZzQZTmhTiBDe8EiB5v17iLryKt-tyZJzrJCsSaJUwzsGpo3kRtTPpsY5EPhqatwLx0o_CQ=w600-h315-p-k';
+const playerDisplay = document.getElementById('player-display');
+const computerDisplay = document.getElementById('computer-display');
+
 
 function modeToggle() {
     if (mode === 'playing') {
         outcomeImages.classList.add('hidden');
+        throwContainer.classList.remove('hidden');
     } else {outcomeImages.classList.remove('hidden');
+        throwContainer.classList.add('hidden');
     }
-    if (playerChoice = 'rock') {
-
+    // player choice display
+    if (playerChoice === 'rock') {
+        playerDisplay.src = rockImage;
+    } 
+    else if (playerChoice === 'paper') {
+        playerDisplay.src = paperImage;
     }
-
-    /* if (result === 1) {
+    else {
+        playerDisplay.src = scissorsImage;
+    }
+    //computer choice display
+    if (computerChoice === 'rock') {
+        computerDisplay.src = rockImage;
+    } 
+    else if (computerChoice === 'paper') {
+        computerDisplay.src = paperImage;
+    }
+    else {
+        computerDisplay.src = scissorsImage;
+    }
+    //win loss center display
+    if (result === 1) {
         resultDisplay.textContent = 'Wins';
-        resultImage.src = 'assets/win.png';
+        outcomeDisplay.src = winImage;
     }
     else if (result === -1) {
         resultDisplay.textContent = 'Losses';
-        resultImage.src = 'assets/lose.png';
+        outcomeDisplay.src = loseImage;
     }
     else {
         resultDisplay.textContent = 'Tie';
-        resultImage.src = 'assets/draw.png';
-    } */
+        outcomeDisplay.src = drawImage;
+    }
+    
 }
 
     // optional: subscribe to events
