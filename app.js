@@ -36,9 +36,7 @@ function jaJanKen() {
         mode = 'playing';
         modeToggle();
     },
-    3000);
-    
-    
+    3000);    
 }
 
 function playerSelect() {
@@ -101,8 +99,8 @@ const outcomeImages = document.getElementById('outcome-images')
 // mode switcher between a playing and non playing state
 function modeToggle() {
     if (mode === 'playing') {
-        outcomeImages.classList.remove('hidden');
-    } else {outcomeImages.classList.add('hidden');
+        outcomeImages.classList.add('hidden');
+    } else {outcomeImages.classList.remove('hidden');
     }
 }
 
