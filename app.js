@@ -97,11 +97,31 @@ function displayResults() {
 const outcomeImages = document.getElementById('outcome-images')
 
 // mode switcher between a playing and non playing state
+const rockImage = "https://tinyurl.com/3hvhaa45"
+const paperImage = "https://tinyurl.com/ms4zp7xf"
+const scissorsImage = "https://tinyurl.com/d2vu65rr"
+
 function modeToggle() {
     if (mode === 'playing') {
         outcomeImages.classList.add('hidden');
     } else {outcomeImages.classList.remove('hidden');
     }
+    if (playerChoice = 'rock') {
+
+    }
+
+    /* if (result === 1) {
+        resultDisplay.textContent = 'Wins';
+        resultImage.src = 'assets/win.png';
+    }
+    else if (result === -1) {
+        resultDisplay.textContent = 'Losses';
+        resultImage.src = 'assets/lose.png';
+    }
+    else {
+        resultDisplay.textContent = 'Tie';
+        resultImage.src = 'assets/draw.png';
+    } */
 }
 
     // optional: subscribe to events
