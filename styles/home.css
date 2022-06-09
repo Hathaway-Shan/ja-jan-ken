@@ -1,1 +1,49 @@
 /* add css for index.html */
+#throw-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.throw, .result {
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+
+    border: 0;
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: pointer;
+}
+.hidden {
+    display: none !important;
+}
+
+.scores{
+    display: flex;
+    gap: 20px;
+}
+
+#throw-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#outcome-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#throwtracker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#scoreboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
